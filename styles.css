@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100vh;
+
+}
+
+.header {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+
+
+}
+
+.textos {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 40px;
+    padding-left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+    min-width: 300px;
+
+}
+
+.txt-mesa {
+    display: none;
+}
+
+.img-mesa {
+    display: none
+}
+
+.txt-autor {
+    color: #555;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+.txt-titulo {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 15px;
+    padding-left: 0;
+}
+
+.txt-descripcion {
+    color: #777;
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 30px;
+    padding-left: 0;
+}
+
+.details {
+    padding: 20px;
+    color: white;
+    width: 170px;
+    height: auto;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.imagenes {
+    border: 1px solid pink;
+
+    height: auto;
+    /* Ajusta la altura automáticamente para mantener la proporción */
+    max-width: 100%;
+    /* Evita que la imagen sea más grande que su contenedor */
+
+}
+
+.footer {
+
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    background-color: #e7e5e5;
+    width: 100wv;
+
+
+}
+
+.footer-objeto_01,
+.footer-objeto_02 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 170px;
+    height: auto;
+    justify-content: left;
+
+}
+
+.footer-objeto_numero {
+    color: #777;
+    font-weight: bold;
+
+}
+
+.footer-objeto_nombre {
+    color: #000;
+    font-weight: bold;
+}
