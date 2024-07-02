@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const txtMesa = document.querySelector('.txt-mesa');
     const imgMesa = document.querySelector('.img-mesa');
     //botones del footer 
-    const btnSilla = document.querySelector('.footer-objeto_01');
-    const btnMesa = document.querySelector('.footer-objeto_02');
+    const btnSilla = document.querySelector('.footerSilla');
+    const btnMesa = document.querySelector('.footerMesa');
 
     //barritas de transición 
     const barritaSilla = document.querySelector('.barrita-silla');
     const barritaMesa = document.querySelector('.barrita-mesa');
+/*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
+    //texto desaparece
+    const txt = document.querySelector('.textos');
 
 
     //Cuando cargue la página que se vea solo la silla (img y txt) 
@@ -39,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
         barritaSilla.style.display = 'block';
         barritaSilla.classList.toggle('completa');
         btnSilla.classList.toggle('completa');
+        /*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
+        txt.classList.toggle('efecto');
+        /*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
 
         // Ocultar texto e imagen de la mesa
         txtMesa.style.display = 'none';
@@ -101,16 +107,5 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// document.querySelector('.footer-objeto_01').addEventListener('click', function () {
 
-//     const barraSilla = document.querySelector('.barrita-silla');
-//     barraSilla.classList.toggle('completa'); 
-    
-// });
-// document.querySelector('.footer-objeto_02').addEventListener('click', function () {
-
-//     const barraMesa = document.querySelector('.barrita-mesa');
-//     barraMesa.classList.toggle('completa'); 
-    
-// });
 

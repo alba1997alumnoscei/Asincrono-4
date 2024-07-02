@@ -1,3 +1,6 @@
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------GENERALES-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +36,10 @@
 
 }
 
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------TEXTO-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
 .textos {
     border: 1px solid green;
     display: flex;
@@ -45,7 +52,30 @@
     width: 90%;
     min-width: 500px;
 
+/*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
+    /* position: relative; /* Asegura que el contenedor sea el contexto de posicionamiento */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+    height: 300px; /* Ajusta la altura del contenedor según sea necesario */
+
 }
+
+.efecto{
+    position: absolute; /* Posiciona la imagen dentro del contenedor */
+    bottom: 0; /* Coloca la imagen inicialmente en la parte inferior */
+    transform: translateY(0); /* Inicia la imagen en su posición original */
+
+    /* Aplica transiciones para transformaciones y opacidad */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.textos.desaparecer .efecto{
+transform: translateY(-100%); /* Mueve la imagen hacia arriba */
+    opacity: 0; /* Hace que la imagen se desvanezca gradualmente */
+} 
+/*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
+
+
+/*-----------------Mesa---------------------*/
 
 .txt-mesa {
     display: none;
@@ -53,14 +83,12 @@
 
 }
 
+/*----------------- Texto Silla---------------------*/
 .txt-silla {
     flex-direction: column;
 }
 
-.img-mesa {
-    display: none
-}
-
+/*-----------------Textos generales---------------------*/
 .txt-autor {
     color: #555;
     font-size: 0.875rem;
@@ -85,6 +113,8 @@
     padding-left: 0;
 }
 
+/*-----------------Cuadrito Details---------------------*/
+
 .details {
     padding: 20px;
     color: white;
@@ -97,6 +127,16 @@
 
 }
 
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------IMAGENES-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.img-mesa {
+    display: none
+}
+
 .imagenes {
     border: 1px solid pink;
 
@@ -107,6 +147,14 @@
 
 }
 
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------FOOTER-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+/*-----------------General---------------------*/
 .footer {
 
     display: flex;
@@ -119,8 +167,21 @@
 
 }
 
-.footer-objeto_01,
-.footer-objeto_02 {
+.footer-numero {
+    color: #777;
+    font-weight: bold;
+    
+}
+
+.footer-nombre {
+    color: #000;
+    font-weight: bold;
+   
+}
+
+/*-----------------General + Transición Opacidad---------------------*/
+.footerSilla,
+.footerMesa {
     display: inline-block;
     flex-direction: column;
     padding-left: 0;
@@ -136,25 +197,22 @@
     transition: opacity 0.3s ease;
     
 }
-.footer-objeto_01.completa,
-.footer-objeto_02.completa {
+.footerSilla.completa,
+.footerMesa.completa {
     opacity: 1;
     
 }
 
 
+/*-----------------Barrita + Transición Width---------------------*/
 
 
-
-
-
-.barrita-silla {
+.barrita-silla .barrita-mesa{
     height: 10px;
     width: 0px;
     flex-direction: row;
     background-color: gray;
     transition: width 2s ease;
-    
     border-radius: 15px ;
     position: absolute;
     top: -12px;
@@ -163,47 +221,13 @@
 
 }
 
-.barrita-silla.completa{
+.barrita-silla.completa .barrita-mesa.completa{
    width: 170px;
    background-color: gray;
    opacity: 1;
-  
-   
    
 }
 
-.barrita-mesa {
-    height: 10px;
-    width: 0px;
-    flex-direction: row;
-    background-color: gray;
-   padding-bottom: 10px;
-    transition: width 2s ease;
-    border-radius: 15px ;
-    position: absolute;
-    top: -12px;
 
 
-}
- .barrita-mesa.completa{
-    width: 170px;
-    background-color: gray;
-    
-}
-
-
-
-
-.footer-objeto_numero {
-    color: #777;
-    font-weight: bold;
-    
-
-}
-
-.footer-objeto_nombre {
-    color: #000;
-    font-weight: bold;
-    
-}
 
