@@ -52,7 +52,8 @@
     flex-direction: column;
 
 }
-.txt-silla{
+
+.txt-silla {
     flex-direction: column;
 }
 
@@ -118,37 +119,91 @@
 
 }
 
-.footer-objeto_01, .footer-objeto_02 {
-    display: flex;
+.footer-objeto_01,
+.footer-objeto_02 {
+    display: inline-block;
     flex-direction: column;
-    padding: 10px;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;;
     width: 170px;
     height: auto;
     justify-content: left;
-
+    position: relative;
+    border: 0cm;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    
 }
-
-.barrita-silla{
- /*PDTE VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER*/
+.footer-objeto_01.completa,
+.footer-objeto_02.completa {
+    opacity: 1;
     
 }
 
-.barrita-mesa{
-/*PDTE VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER*/
+
+
+
+
+
+
+.barrita-silla {
+    height: 10px;
+    width: 0px;
+    flex-direction: row;
+    background-color: gray;
+    transition: width 2s ease;
+    
+    border-radius: 15px ;
+    position: absolute;
+    top: -12px;
+    
+    
 
 }
+
+.barrita-silla.completa{
+   width: 170px;
+   background-color: gray;
+   opacity: 1;
+  
+   
+   
+}
+
+.barrita-mesa {
+    height: 10px;
+    width: 0px;
+    flex-direction: row;
+    background-color: gray;
+   padding-bottom: 10px;
+    transition: width 2s ease;
+    border-radius: 15px ;
+    position: absolute;
+    top: -12px;
+
+
+}
+ .barrita-mesa.completa{
+    width: 170px;
+    background-color: gray;
+    
+}
+
+
+
 
 .footer-objeto_numero {
     color: #777;
     font-weight: bold;
+    
 
 }
 
 .footer-objeto_nombre {
     color: #000;
     font-weight: bold;
+    
 }
 
-.footer-click{
-
-}
