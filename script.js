@@ -17,17 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
     //barritas de transición 
     const barritaSilla = document.querySelector('.barrita-silla');
     const barritaMesa = document.querySelector('.barrita-mesa');
-/*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
-    //texto desaparece
-    const txt = document.querySelector('.textos');
+
+    
+
+    
 
 
-    //Cuando cargue la página que se vea solo la silla (img y txt) 
-    txtSilla.style.display = 'flex';
-    imgSilla.style.display = 'block';
-    txtMesa.style.display = 'none';
-    imgMesa.style.display = 'none';
-    barritaSilla.style.display = 'block';
+
+// Mostrar solo la silla al cargar la página
+imgSilla.classList.remove('oculto');
+txtSilla.classList.remove('oculto');
+btnSilla.classList.add('completa');
+barritaSilla.classList.add('completa');
+
+
     
     
 
@@ -36,39 +39,76 @@ document.addEventListener('DOMContentLoaded', function () {
     //Cuando hago click sobre el botón de la silla
     btnSilla.addEventListener('click', function () {
 
-        // Se mostrarán 
-        txtSilla.style.display = 'flex';
-        imgSilla.style.display = 'block';
-        barritaSilla.style.display = 'block';
-        barritaSilla.classList.toggle('completa');
-        btnSilla.classList.toggle('completa');
-        /*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
-        txt.classList.toggle('efecto');
-        /*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
+         //SILLA: imagen y texto silla
+         imgSilla.classList.remove('oculto');
+         txtSilla.classList.remove('oculto');
 
-        // Ocultar texto e imagen de la mesa
-        txtMesa.style.display = 'none';
-        imgMesa.style.display = 'none';
-        barritaMesa.classList.remove('completa');
-        btnMesa.classList.remove('completa');
+         //SILLA: boton y barrita silla 
+         btnSilla.classList.add('completa');
+         barritaSilla.classList.add('completa');
+
+         //MESA: imagen y texto mesa
+         imgMesa.classList.add('oculto');
+         txtMesa.classList.add('oculto');
         
+
+         //MESA: boton y barrita mesa
+        btnMesa.classList.remove('completa');
+        barritaMesa.classList.remove('completa');
+        // // Se mostrarán 
+        // txtSilla.style.display = 'flex';
+        // imgSilla.style.display = 'block';
+        // barritaSilla.style.display = 'block';
+        // barritaSilla.classList.toggle('completa');
+        // btnSilla.classList.toggle('completa');
+        
+        
+       
+
+        // // Ocultar texto e imagen de la mesa
+        // txtMesa.style.display = 'none';
+        // imgMesa.style.display = 'none';
+        // barritaMesa.classList.remove('completa');
+        // btnMesa.classList.remove('completa');
+        
+        
+
         
        
     });
 
     btnMesa.addEventListener('click', function () {
-        // Mostrar texto e imagen de la mesa
-        txtMesa.style.display = 'flex';
-        imgMesa.style.display = 'block';
-        barritaMesa.style.display = 'block';
-        barritaMesa.classList.toggle('completa');
-        btnMesa.classList.toggle('completa');
-        
-        // Ocultar texto e imagen de la silla
-        txtSilla.style.display = 'none';
-        imgSilla.style.display = 'none';
-        barritaSilla.classList.remove('completa');
+        //SILLA: imagen y texto 
+        imgSilla.classList.add('oculto');
+        txtSilla.classList.add('oculto');
+
+        //SILLA:boton y barrita  
         btnSilla.classList.remove('completa');
+        barritaSilla.classList.remove('completa');
+
+
+        //MESA: imagen y texto 
+      
+        imgMesa.classList.add('oculto');
+        txtMesa.classList.add('oculto');
+
+       
+        //MESA: boton y barrita 
+        btnMesa.classList.add('completa');
+        barritaMesa.classList.add('completa');
+
+        // // Mostrar texto e imagen de la mesa
+        // txtMesa.style.display = 'flex';
+        // imgMesa.style.display = 'block';
+        // barritaMesa.style.display = 'block';
+        // barritaMesa.classList.toggle('completa');
+        // btnMesa.classList.toggle('completa');
+        
+        // // Ocultar texto e imagen de la silla
+        // txtSilla.style.display = 'none';
+        // imgSilla.style.display = 'none';
+        // barritaSilla.classList.remove('completa');
+        // btnSilla.classList.remove('completa');
         
         
     });
@@ -80,21 +120,60 @@ document.addEventListener('DOMContentLoaded', function () {
         const posicionScroll = window.scrollY;
 
         // Altura del contenedor de texto
-        const alturaTexto = document.querySelector('.txt-autor').offsetHeight;
+        
+        const alturaMesa = btnMesa.offsetTop;
 
         // Determinar cuándo cambiar de elementos visibles
-        if (posicionScroll > alturaTexto) {
-            // Mostrar img-mesa y txt-mesa, ocultar img-silla y txt-silla
-            imgSilla.style.display = 'none';
-            txtSilla.style.display = 'none';
-            imgMesa.style.display = 'block';
-            txtMesa.style.display = 'flex';
+        if (posicionScroll > alturaMesa) {
+            
+            
+            //SILLA: imagen y texto 
+            imgSilla.classList.add('oculto');
+            txtSilla.classList.add('oculto');
+
+            //SILLA:boton y barrita  
+            btnSilla.classList.remove('completa');
+            barritaSilla.classList.remove('completa');
+ 
+
+            //MESA: imagen y texto 
+          
+            imgMesa.classList.remove('oculto');
+            txtMesa.classList.remove('oculto');
+
+           
+            //MESA: boton y barrita 
+            btnMesa.classList.add('completa');
+            barritaMesa.classList.add('completa');
+           
+        
+
         } else {
-            // Mostrar img-silla y txt-silla, ocultar img-mesa y txt-mesa
-            imgSilla.style.display = 'block';
-            txtSilla.style.display = 'flex';
-            imgMesa.style.display = 'none';
-            txtMesa.style.display = 'none';
+            
+
+             //SILLA: imagen y texto silla
+             imgSilla.classList.remove('oculto');
+             txtSilla.classList.remove('oculto');
+
+             //SILLA: boton y barrita silla 
+             btnSilla.classList.add('completa');
+             barritaSilla.classList.add('completa');
+ 
+             //MESA: imagen y texto mesa
+             imgMesa.classList.add('oculto');
+             txtMesa.classList.add('oculto');
+            
+
+             //MESA: boton y barrita mesa
+            btnMesa.classList.remove('completa');
+            barritaMesa.classList.remove('completa');
+
+          
+            
+
+            
+           
+            
         }
     }
 

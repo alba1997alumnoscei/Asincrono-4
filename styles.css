@@ -7,23 +7,57 @@
     box-sizing: border-box;
 }
 
+
+
 .container {
     display: flex;
     padding: 50px;
     flex-direction: column;
     flex-grow: 1;
     height: 100vh;
+    overflow: oculto;
+    width: 100%;
+    
 
 }
 
 .header {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+   
     display: flex;
     justify-content: space-between;
+    
     flex-direction: row;
 
+    /*----------------------------*/
+   
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 40px;
+    
+    position: fixed;
+    
+
 }
+
+.header-button{
+    display: flex;
+    align-items: center;
+   
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Quitamos el borde */
+    
+    margin-right: 40px; /* Margen derecho para separar del texto 'mater' */
+    
+}
+
+.header-txt{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.25REM;
+}
+
+
 
 .content {
     display: flex;
@@ -31,62 +65,81 @@
     justify-content: space-between;
     padding-top: 70px;
     padding-bottom: 70px;
-
+    width: 100%;
+    flex-grow: 1;
 
 
 }
+
+
 
 /*------------------------------------------------------------------------------------*/
 /*--------------------------------TEXTO-------------------------------------------*/
 /*------------------------------------------------------------------------------------*/
 
 .textos {
-    border: 1px solid green;
+   
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
+    /*justify-content: flex-start;
+    align-items: flex-start;
+    align-items: left;*/
     padding: 40px;
     padding-left: 0;
     font-family: Arial, Helvetica, sans-serif;
-    width: 90%;
-    min-width: 500px;
+    max-width: 50%;
+    min-width: 50%;
+    overflow: auto;
+   
 
-/*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
-    /* position: relative; /* Asegura que el contenedor sea el contexto de posicionamiento */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
-    height: 300px; /* Ajusta la altura del contenedor según sea necesario */
-
-}
-
-.efecto{
-    position: absolute; /* Posiciona la imagen dentro del contenedor */
-    bottom: 0; /* Coloca la imagen inicialmente en la parte inferior */
-    transform: translateY(0); /* Inicia la imagen en su posición original */
-
-    /* Aplica transiciones para transformaciones y opacidad */
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.textos.desaparecer .efecto{
-transform: translateY(-100%); /* Mueve la imagen hacia arriba */
-    opacity: 0; /* Hace que la imagen se desvanezca gradualmente */
 } 
-/*COMPROBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR*/
 
 
-/*-----------------Mesa---------------------*/
 
-.txt-mesa {
-    display: none;
+
+
+/* 
+/*----------------- Mesa---------------------*/
+
+.txt-mesa, .img-mesa {
+    
     flex-direction: column;
-
+    opacity: 1;
+    transition: opacity 0.5s ease-out; 
+    
 }
 
-/*----------------- Texto Silla---------------------*/
-.txt-silla {
-    flex-direction: column;
+.txt-silla, .img-silla{
+    
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+   
 }
+
+.txt-mesa.oculto,
+.img-mesa.oculto {
+    
+    opacity: 0;
+    
+    
+}
+
+.txt-silla.oculto,
+.img-silla.oculto {
+    opacity: 0;
+    
+    
+} 
+
+
+
+
+/*----------------- Silla---------------------*/
+
+
+
+
+
 
 /*-----------------Textos generales---------------------*/
 .txt-autor {
@@ -101,22 +154,22 @@ transform: translateY(-100%); /* Mueve la imagen hacia arriba */
     font-weight: bold;
     margin: 0;
     margin-bottom: 10px;
-    padding: 15px;
-    padding-left: 0;
+    padding: 15px 0;
+
 }
 
 .txt-descripcion {
     color: #777;
     font-size: 0.875rem;
     margin: 0;
-    padding: 30px;
-    padding-left: 0;
+    padding: 30px 0;
+ 
 }
 
 /*-----------------Cuadrito Details---------------------*/
 
 .details {
-    padding: 20px;
+    padding: 0.8rem;
     color: white;
     width: 170px;
     height: auto;
@@ -124,6 +177,7 @@ transform: translateY(-100%); /* Mueve la imagen hacia arriba */
     display: flex;
     justify-content: center;
     align-content: center;
+    font-size: 0.9rem;
 
 }
 
@@ -133,18 +187,14 @@ transform: translateY(-100%); /* Mueve la imagen hacia arriba */
 /*--------------------------------IMAGENES-------------------------------------------*/
 /*------------------------------------------------------------------------------------*/
 
-.img-mesa {
-    display: none
-}
 
-.imagenes {
+.img {
     border: 1px solid pink;
 
     height: auto;
-    /* Ajusta la altura automáticamente para mantener la proporción */
-    max-width: 100%;
-    /* Evita que la imagen sea más grande que su contenedor */
-
+    
+    max-width: 50%;
+    min-width: 50%;
 }
 
 
@@ -162,7 +212,14 @@ transform: translateY(-100%); /* Mueve la imagen hacia arriba */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.75rem;
     background-color: #e7e5e5;
-    width: 100wv;
+    width: 100%;
+
+   
+    bottom: 0;
+    z-index: 1000;
+    padding: 10px 50px;
+    position: sticky;
+ 
 
 
 }
@@ -184,15 +241,12 @@ transform: translateY(-100%); /* Mueve la imagen hacia arriba */
 .footerMesa {
     display: inline-block;
     flex-direction: column;
-    padding-left: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;;
-    width: 170px;
+   padding: 10px 10px 10px 0;
+    width: 10.625rem;
     height: auto;
-    justify-content: left;
+   
     position: relative;
-    border: 0cm;
+    border: 0;
     opacity: 0.5;
     transition: opacity 0.3s ease;
     
@@ -207,27 +261,42 @@ transform: translateY(-100%); /* Mueve la imagen hacia arriba */
 /*-----------------Barrita + Transición Width---------------------*/
 
 
-.barrita-silla .barrita-mesa{
-    height: 10px;
+.barrita-silla, .barrita-mesa{
+    height: 5px;
     width: 0px;
     flex-direction: row;
-    background-color: gray;
-    transition: width 2s ease;
-    border-radius: 15px ;
+    background-color: rgb(177, 176, 176);
     position: absolute;
     top: -12px;
+    transition: width 2s ease;
     
     
 
 }
 
-.barrita-silla.completa .barrita-mesa.completa{
+.barrita-silla.completa, .barrita-mesa.completa{
    width: 170px;
-   background-color: gray;
+   background-color: rgb(88, 87, 87);
    opacity: 1;
    
 }
 
+@media (max-width: 768px) {
+    .header, .footer {
+        padding: 10px;
+    }
 
+    .textos, .imagenes {
+        padding: 10px;
+    }
+
+    .footerSilla, .footerMesa {
+        width: 120px;
+    }
+
+    .barrita-silla.completa, .barrita-mesa.completa {
+        width: 120px;
+    }
+}
 
 
