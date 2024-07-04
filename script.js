@@ -89,8 +89,8 @@ barritaSilla.classList.add('completa');
 
         //MESA: imagen y texto 
       
-        imgMesa.classList.add('oculto');
-        txtMesa.classList.add('oculto');
+        imgMesa.classList.remove('oculto');
+        txtMesa.classList.remove('oculto');
 
        
         //MESA: boton y barrita 

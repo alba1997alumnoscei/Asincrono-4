@@ -11,12 +11,12 @@
 
 .container {
     display: flex;
-    padding: 50px;
-    flex-direction: ;column;
+    padding: 100px;
+    flex-direction: column;
     flex-grow: 1;
-    height: 100vh;
-    overflow: oculto;
-    width: 100%;
+ 
+  
+    
     
 
 }
@@ -25,16 +25,10 @@
    
     display: flex;
     justify-content: space-between;
-    
-    flex-direction: row;
-
-    /*----------------------------*/
-   
     top: 0;
     width: 100%;
     z-index: 1000;
     padding: 40px;
-    
     position: fixed;
     
 
@@ -43,12 +37,9 @@
 .header-button{
     display: flex;
     align-items: center;
-   
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Quitamos el borde */
-    
-    margin-right: 40px; /* Margen derecho para separar del texto 'mater' */
-    
+    padding: 10px 20px;
+    border: none; 
+    margin-right: 40px; 
 }
 
 .header-txt{
@@ -63,29 +54,34 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    width: 100%;
-    flex-grow: 1;
-    position: sticky;
-   
+   padding: 70px;
     height: 100vh;
-
-
-}
-
-.silla{
-    display: flex;
-    flex-direction: row;
-}
-
-.mesa{
-    display: flex;
-    flex-direction: row;
+    width: 100vw;
+    
     
 }
 
+.silla, .mesa {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    transition: opacity 1s ease-out, transform 1s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+    position: fixed;
+    top:50 ;
+    left: 40;
+    right: 40;
+    justify-content: space-between;
 
+}
+
+
+
+.silla.oculto, .mesa.oculto {
+    opacity: 0;
+    transform: translateY(-20px);
+}
 
 /*------------------------------------------------------------------------------------*/
 /*--------------------------------TEXTO-------------------------------------------*/
@@ -115,18 +111,30 @@
 /* 
 /*----------------- Mesa---------------------*/
 
-.txt-mesa, .img-mesa {
-    
+.txt-mesa, .txt-silla {
+    display: flex;
     flex-direction: column;
+    width: 300px;
+    min-width: 200px;
     opacity: 1;
-    transition: opacity 1s ease-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-out, transform 2s ease-in-out; translate: ;
+    position: relative;
+    top: 50;
+    margin-right: 200px;
     
 }
 
-.txt-silla, .img-silla{
+.img-mesa, .img-silla{
+    max-width: 70%;
+    height: auto;
     
     opacity: 1;
-    transition: opacity 1s ease-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-out, transform 2s ease-in-out;
+    padding: 50px;
+    position: relative;
+    bottom: 150px;
+    
+   
   
 }
 
@@ -134,6 +142,7 @@
 .img-mesa.oculto {
     
     opacity: 0;
+    transform: translateY(-100px);
     
     
 }
@@ -141,9 +150,12 @@
 .txt-silla.oculto,
 .img-silla.oculto {
     opacity: 0;
+    transform: translateY(-100px); 
+
     
     
 } 
+
 
 
 
@@ -176,7 +188,7 @@
     color: #777;
     font-size: 0.875rem;
     margin: 0;
-    padding: 30px 0;
+    
  
 }
 
@@ -186,7 +198,6 @@
     padding: 0.8rem;
     color: white;
     width: 170px;
-    height: auto;
     background-color: #000;
     display: flex;
     justify-content: center;
@@ -205,13 +216,11 @@
 
 .imagenes{
     height: 100vh;
-    height: auto;
+    width: auto;
 }
 .img {
-    border: 1px solid pink;
-
-    height: auto;
     
+    height: auto;
     max-width: 50%;
     min-width: 50%;
 }
@@ -262,7 +271,7 @@
     flex-direction: column;
    padding: 10px 10px 10px 0;
     width: 10.625rem;
-    height: auto;
+   
    
     position: relative;
     border: 0;
@@ -283,7 +292,6 @@
 .barrita-silla, .barrita-mesa{
     height: 5px;
     width: 0px;
-    flex-direction: row;
     background-color: rgb(177, 176, 176);
     position: absolute;
     top: -12px;
