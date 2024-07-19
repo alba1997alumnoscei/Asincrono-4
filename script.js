@@ -18,10 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const barritaSilla = document.querySelector('.barrita-silla');
     const barritaMesa = document.querySelector('.barrita-mesa');
 
-    
-
-    
-
 
 
 // Mostrar solo la silla al cargar la página
@@ -30,9 +26,6 @@ txtSilla.classList.remove('oculto');
 btnSilla.classList.add('completa');
 barritaSilla.classList.add('completa');
 
-
-    
-    
 
     // 2 . Funciones 
 
@@ -55,24 +48,6 @@ barritaSilla.classList.add('completa');
          //MESA: boton y barrita mesa
         btnMesa.classList.remove('completa');
         barritaMesa.classList.remove('completa');
-        // // Se mostrarán 
-        // txtSilla.style.display = 'flex';
-        // imgSilla.style.display = 'block';
-        // barritaSilla.style.display = 'block';
-        // barritaSilla.classList.toggle('completa');
-        // btnSilla.classList.toggle('completa');
-        
-        
-       
-
-        // // Ocultar texto e imagen de la mesa
-        // txtMesa.style.display = 'none';
-        // imgMesa.style.display = 'none';
-        // barritaMesa.classList.remove('completa');
-        // btnMesa.classList.remove('completa');
-        
-        
-
         
        
     });
@@ -97,19 +72,7 @@ barritaSilla.classList.add('completa');
         btnMesa.classList.add('completa');
         barritaMesa.classList.add('completa');
 
-        // // Mostrar texto e imagen de la mesa
-        // txtMesa.style.display = 'flex';
-        // imgMesa.style.display = 'block';
-        // barritaMesa.style.display = 'block';
-        // barritaMesa.classList.toggle('completa');
-        // btnMesa.classList.toggle('completa');
-        
-        // // Ocultar texto e imagen de la silla
-        // txtSilla.style.display = 'none';
-        // imgSilla.style.display = 'none';
-        // barritaSilla.classList.remove('completa');
-        // btnSilla.classList.remove('completa');
-        
+       
         
     });
 
@@ -168,11 +131,6 @@ barritaSilla.classList.add('completa');
             btnMesa.classList.remove('completa');
             barritaMesa.classList.remove('completa');
 
-          
-            
-
-            
-           
             
         }
     }
@@ -182,7 +140,7 @@ barritaSilla.classList.add('completa');
 
     // Llamar a hacerScroll al cargar la página para inicializar el estado
     hacerScroll();
-    ;
+    
 });
 
 
