@@ -130,8 +130,6 @@ barritaSilla.classList.add('completa');
              //MESA: boton y barrita mesa
             btnMesa.classList.remove('completa');
             barritaMesa.classList.remove('completa');
-
-            
         }
     }
 
